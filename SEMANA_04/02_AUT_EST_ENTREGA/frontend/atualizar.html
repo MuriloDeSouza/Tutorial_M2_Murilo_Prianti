@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<h1>Atualização de Usuário</h1>
+    <form name="form1" method="post" action="/atualiza_habilits">
+        QUALIDADE: <input type="text" id="quality" name="qualidade" value="" required>
+        <br>
+        HABILIDADE: <input type="text" id="skills" name="habilidade" value="" required>
+        <br>
+        <input type="hidden" id="id_habilidade" name="id_habilidade" value="">
+        <input type="hidden" id="Id_pessoa" name="Id_pessoa" value="">
+        <input type="submit" value="ATUALIZAR">
+    </form>
+    <script>
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+        url = '/atualiza_habilits?id_habilidade='+url.searchParams.get("id_habilidade");
+        fetch(url)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            let pessoas = data;
+            pessoas.map(function(pessoa) {
+                document.getElementById('id_habilidade').value = pessoa.id_habilidade;
+                document.getElementById('Id_pessoa').value = pessoa.Id_pessoa;
+                document.getElementById('qulidade').value = pessoa.qualidade;
+                document.getElementById('habilidade').value = pessoa.habilidade;
+            });
+            alert(response.json());
+        })
+        .catch(function(error) {
+            console.log(error)
+        });
+    </script>
+<body>
+</body>
+</html>

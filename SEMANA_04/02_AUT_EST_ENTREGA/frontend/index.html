@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+    <h1>Listagem dos usuários</h1> 
+    <p><a href="/inserir.html">Inserir novo usuário</a></p> <!--Aqui quando eu uso o a é como se eu colocasse um link-->
+    <script>
+        const url = '/habilits';
+
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+
+        .then((data)=>{
+            let pessoas = data;
+            let saida = '';
+            pessoas.map(function(pessoa){
+            saida += '<strong> '+ `${pessoa.id_habilidade}` + '</strong> ' + `${pessoa.habilidade}` + ' - ' + `${pessoa.qualidade}` + ' - ' + `${pessoa.Id_pessoa}`;
+            saida += ' - <a href="/atualizar.html?id_habilidade=' + `${pessoa.id_habilidade}` + '">EDITAR</a>';
+            saida += ' | <a href="/remove_habilits?id_habilidade=' + `${pessoa.id_habilidade}` + '">REMOVER</a></br>';
+            });
+            document.getElementById('resultado').innerHTML = saida;
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+        
+    </script>
+<body>
+    <div id="resultado"></div>
+    
+</body>
+</html>
