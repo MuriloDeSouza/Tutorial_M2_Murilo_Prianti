@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    background: #83d06e;
+}
+
+
+.inserir_infos{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inserir_infos > input{
+    display: flex;
+    width: 38%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    outline: none;
+    justify-content: center;
+}
+
+.but_login{
+
+    width: 100%;
+    justify-content: center !important;
+    border-radius: 5px;
+    padding: 16px 0px;
+    margin: 0px;
+    outline: none;
+    background: #345444;
+    cursor: pointer;
+}

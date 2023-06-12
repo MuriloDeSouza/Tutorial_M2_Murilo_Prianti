@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    background: #83d06e;
+}
+
+
+.tela_de_login{
+    width: 50vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_infos > input{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+}
+.botao_login > input{
+    width: 100%;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 16px 0px;
+    margin: 0px;
+    outline: none;
+    background: #345444;
+    cursor: pointer;
+}
+
+.right_login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1c3f2f;
+    text-align: center;
+}
+
+.btn_jquery{
+    margin-top: 6%;
+    margin-left: 8%;
+}
+.right_login_img{
+    width: 35vw;
+    outline: none;
+    font-size: 3vw;
+}
